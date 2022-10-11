@@ -1,0 +1,39 @@
+Source: libregexp-pattern-license-perl
+Section: perl
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13),
+ libre-engine-re2-perl <!nocheck>,
+ libregexp-pattern-perl <!nocheck>,
+ libtest-regexp-pattern-perl <!nocheck>,
+ libtest-simple-perl <!nocheck>,
+ libtest-without-module-perl <!nocheck>,
+ libtest2-suite-perl,
+ libtry-tiny-perl <!nocheck>,
+ perl,
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Jonas Smedegaard <dr@jones.dk>,
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libregexp-pattern-license-perl.git
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libregexp-pattern-license-perl
+Homepage: https://metacpan.org/pod/Regexp::Pattern::License
+Rules-Requires-Root: no
+Testsuite: autopkgtest-pkg-perl
+
+Package: libregexp-pattern-license-perl
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${perl:Depends},
+Recommends:
+ libre-engine-re2-perl,
+Replaces:
+ licensecheck (<< 3.0.31-1),
+Breaks:
+ licensecheck (<< 3.2.7-1~),
+Description: regular expressions for legal licenses
+ Regexp::Pattern::License provides a hash of regular expression patterns
+ related to legal software licenses.
+ .
+ Regexp::Pattern is a convention for organizing reusable regex patterns.

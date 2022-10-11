@@ -1,0 +1,213 @@
+libregexp-pattern-license-perl (3.9.3-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * tighten breakage of licensecheck
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 18 Aug 2021 19:55:53 +0200
+
+libregexp-pattern-license-perl (3.9.2-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * declare compliance with Debian Policy 4.6.0
+  * build-depend on libtest-without-module-perl
+  * relax to recommend (not depend on) libre-engine-re2-perl
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 18 Aug 2021 09:22:51 +0200
+
+libregexp-pattern-license-perl (3.9.0-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * declare compliance with Debian Policy 4.5.1
+  * simplify source helper script copyright-check
+  * update paths in lintian overrides
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 15 Aug 2021 09:49:23 +0200
+
+libregexp-pattern-license-perl (3.7.1-1) experimental; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 22 Jul 2021 14:49:45 +0200
+
+libregexp-pattern-license-perl (3.7.0-1) experimental; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 18 Jul 2021 00:09:06 +0200
+
+libregexp-pattern-license-perl (3.6.1-1) experimental; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * build-depend on libtest2-suite-perl
+    (not libtest-exception-perl libtest-requires-perl)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 07 Jul 2021 23:26:34 +0200
+
+libregexp-pattern-license-perl (3.5.1-1) experimental; urgency=medium
+
+  [ upstream ]
+  * new release
+    + fix include all member patterns in series objects
+      (not a random subset);
+      closes: bug#989912, thanks to Walter Lozano
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Repository, Repository-Browse.
+
+  [ Jonas Smedegaard ]
+  * use debhelper compatibility level 13 (not 12)
+  * copyright info: update coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 22 Jun 2021 23:53:59 +0200
+
+libregexp-pattern-license-perl (3.4.0-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 22 May 2020 10:26:06 +0200
+
+libregexp-pattern-license-perl (3.3.1-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 17 May 2020 23:39:39 +0200
+
+libregexp-pattern-license-perl (3.3.0-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 14 Mar 2020 00:54:23 +0100
+
+libregexp-pattern-license-perl (3.2.0-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * declare compliance with Debian Policy 4.5.0
+  * update debhelper;
+    build-depend on debhelper-compat (not debhelper)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 21 Feb 2020 16:27:28 +0100
+
+libregexp-pattern-license-perl (3.1.102-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * fix watch file
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 10 Feb 2020 03:00:51 +0100
+
+libregexp-pattern-license-perl (3.1.101-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 30 Jan 2020 01:33:21 +0100
+
+libregexp-pattern-license-perl (3.1.100-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 28 Jan 2020 11:23:51 +0100
+
+libregexp-pattern-license-perl (3.1.99-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release(s)
+
+  [ Jonas Smedegaard ]
+  * (build-)depend on libre-engine-re2-perl
+  * declare compliance with Debian Policy 4.4.1
+  * enable testsuite
+  * Update watch file:
+    + Simplify version regex.
+    + Rewrite usage comment.
+  * use debhelper compatibility mode 10
+  * build-depend on libtest-regexp-pattern-perl libtest-requires-perl
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 05 Jan 2020 12:40:46 +0100
+
+libregexp-pattern-license-perl (3.1.93-1) experimental; urgency=medium
+
+  [ upstream ]
+  * New release.
+    + Fix DOS in pattern for leading bullets.
+      Closes: Bug#926392. Thanks to Sandro Mani and Niels Thykier.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 08 Jun 2019 18:43:59 +0200
+
+libregexp-pattern-license-perl (3.1.92-1) experimental; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+
+  [ Jonas Smedegaard ]
+  * Build-depend on libtry-tiny.
+  * Add lintian overrides regarding evil JSON license.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 04 Nov 2018 02:19:33 +0100
+
+libregexp-pattern-license-perl (3.0.31-4) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ Jonas Smedegaard ]
+  * Simplify rules:
+    + Stop resolve (build-)dependencies in rules file.
+    + Use short-form dh sequencer (not cdbs).
+      Stop build-depend on cdbs.
+  * Update watch file: Fix typo in usage comment.
+  * Update copyright info: Extend coverage of packaging.
+  * Declare compliance with Debian Policy 4.2.1.
+  * Set Rules-Requires-Root: no.
+  * Skip testsuite build-dependencies when bootstrapping.
+  * Stop build-depend on dh-buildinfo.
+  * Wrap and sort control file.
+  * Update copyright info: Update alternate source URLs.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 04 Nov 2018 02:07:31 +0100
+
+libregexp-pattern-license-perl (3.0.31-3) unstable; urgency=medium
+
+  * Fix build-depend on libregexp-pattern-perl libtest-exception-perl
+    libtest-simple-perl, and enable testsuite: libregexp-pattern-perl is
+    now in Debian.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 18 Sep 2017 01:53:40 +0200
+
+libregexp-pattern-license-perl (3.0.31-2) unstable; urgency=medium
+
+  * Update package relations: Fix replace and break older licensecheck.
+  * Update copyright info: Use https protocol in file format URL.
+  * Modernize Vcs-* fields: Consistently include .git suffix in path.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 17 Sep 2017 22:24:43 +0200
+
+libregexp-pattern-license-perl (3.0.31-1) unstable; urgency=low
+
+  * Initial packaging release.
+    Closes: bug#875628.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 12 Sep 2017 22:30:34 +0200

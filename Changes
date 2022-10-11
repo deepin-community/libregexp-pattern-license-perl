@@ -1,0 +1,835 @@
+Regexp-Pattern-License
+======================
+
+Created:      2016-11-23
+Home page:    <https://metacpan.org/pod/Regexp::Pattern::License>
+Home page:    <https://metacpan.org/release/Regexp-Pattern-License>
+Bug tracker:  <https://bugs.debian.org/libregexp-pattern-license-perl>
+Maintainer:   Jonas Smedegaard (JONASS) <jonass@cpan.org>
+
+v3.9.3	2021-08-18
+
+ [ Packaging ]
+ - declare that we break App::Licensecheck before v3.2.7 (exception
+   opbjects were wrongly tagged until Regexp::Pattern::License v3.9.0)
+
+v3.9.2	2021-08-17
+
+ [ Documentation ]
+ - improve SYNOPSIS
+
+ [ Test Suite ]
+ - improve regexp tests
+
+ [ Packaging ]
+ - relax to recommend (not depend on) module re::engine::RE2
+ - test-require Test::Without::Module
+
+ [ Other ]
+ - stop enable RE2 option -longest_match, to match equally as without RE2
+   engine
+ - tighten license pattern for bsd_4_clause, to shadow bsd
+
+v3.9.1	2021-08-16
+
+ - permit RE2 engine to consume up to 16MiB (default 8MiB is insufficient
+   e.g. on ARMv6)
+
+v3.9.0	2021-08-14
+
+ [ Bug Fixes ]
+ - annotate wide comma (for mulan licenses) in synthesized patterns
+ - avoid synth.nogrant (not only alt.org.wikidata) when synthesizing grant
+   patterns
+ - cover trailing zero on synthesized patterns for objects aladdin_8
+   aladdin_9 efl_1 efl_2 mulan_1 mulan_2
+ - de-randomize fedora and osi IRIs
+ - escape . (dot) in synthesized patterns
+ - fix alt.org.fsf metadata for object afl_3
+ - fix alt.org.wikipedia metadata
+ - fix drop bogus data from bsd_3_clause
+ - fix parens in synthesized patterns
+ - re-tag python_2 as type:combo (not type:singleversion), and fix/update
+   patterns and metadata
+ - tag exception prefix traits as type:trait:exception:prefix (not bogusly
+   as type:trait:grant:prefix)
+
+ [ Documentation ]
+ - document object stability (since v3.1.0)
+ - extend copyright to include recent years, and add Purism SPC as
+   copyright holder
+
+ [ Other ]
+ - Added: add license object psf_2
+ - Added: add license object unicode_dfs, and change objects
+   unicode_dfs_2015 unicode_dfs_2016 from unversioned to singleversion
+ - Added: add license objects bsd_3_clause_eclipse bsd_3_clause_refractions
+ - Added: add/update lots of alt.org.wikidata names and captions
+ - Added: support engine => none (for returning a uncompiled regexp string)
+ - Removed: deprecate license object python: superceded by psf_2 and
+   python_2
+ - Removed: deprecate license object wordnet_3: superceded by wordnet
+   (license is unversioned, version belongs to software project)
+ - add alternative clashing names for objects mit_new x11
+ - add annotation [+]
+ - add trait object license_label_spdx, and synthesize SPDX short-form
+   identifiers distinct from other license labels
+ - add/update lots of alt.org.trove names and captions
+ - bump version
+ - improve alt.org.osi historical metadata
+ - improve and simplify license patterns for objects oldap oldap_1_1
+   oldap_2_0_1 oldap_2_1 oldap_2_2 oldap_2_2_1 oldap_2_2_2 oldap_2_3
+   oldap_2_4 oldap_2_5 oldap_2_6 oldap_2_7 oldap_2_8
+ - optimize annotation and mangling of synthesized patterns
+ - optimize: synthesize name and grant patterns in one loop
+ - optimize: synthesize patterns from metadata name in general loop
+ - optimize: synthesize trove patterns in name/grant loop
+ - relax pattern for object license_label to cover german identifier and
+   space before colon
+ - relax pattern for object licensed_under to optionally end with colon
+ - rewrite description for object x11 to cover origin, and add description
+   to object mit_new
+ - simplify structure: stop use attribute version
+ - synthesize name pattern for object apache
+ - tighten annotations [:] [http://] to not implicitly treat colon or slash
+   as optional
+ - tighten synthesized patterns to cover singleword caption only once
+ - tighten version stopgap to exclude ASCII alphabetic characters and plus,
+   and exclude only roman digits, in synthesized patterns
+ - use general version stopgap for synthesized grant patterns from metadata
+   name
+ - use general version stopgap for synthesized trove patterns
+
+v3.8.1	2021-08-07
+
+ [ Bug Fixes ]
+ - avoid non-destructive substitution to support older perls
+ - avoid randomly skipping Fedora IRIs, by normalizing property names
+ - avoid randomly skipping chinese IRIs, by fully aligning with DefHash
+   spec 1.0.13 which permits uppercase chararacters in properties
+ - drop alternate names related to Thrift from objects bsl bsl_1: Different
+   not yet included license
+ - expand annotation [ / ]
+ - fix default name for object antlr_pd
+ - fix license pattern for object wordnet_3
+ - fix licenseversion hint for object cecill_2
+ - fix scope for glide and gpl_2 license patterns
+ - rename attribute alt.archive.date_* -> alt.archive.time-* for iri
+   property of wordnet
+ - rename attribute lang -> alt.lang to comply with DefHash spec
+
+ [ Documentation ]
+ - add examples to objcts gpl_3 gpl_3_only
+
+ [ Test Suite ]
+ - add test to check DefHash structure
+ - improve test library to dinstinguish default name from no name, and
+   check for caption and summary regardless of org-specific name
+ - rename large test to improve parallelization
+ - restructure test function license_org_metadata() to take options as
+   hashref
+ - simplify tests to rely on examples (not inspect raw regex code)
+ - test object mit_unixcrypt
+ - tighten test 03-match-normalized.t by wrapping lines more aggressively
+
+ [ Other ]
+ - add alternative camelcase shortname for CeCill objects
+ - add annotations [. ] [". ]
+ - add default name for objects mit_cmu_warranty mpich2
+ - add description with origin to object cua_opl_1
+ - add steward's alternative caption for object cnri_jython
+ - add/update lots of alt.org.fedora names and captions, and historical
+   alt.org.cc names for some GNU licenses
+ - annotate characters / + ( ), in synthesized patterns, and stop escape
+   space or comma
+ - consistently use attribute iri (not web or none) for IRI-related
+   properties
+ - minor optimizations
+ - optimize annotation expansion
+ - optimize module bootstrapping
+ - optimize synthesizing metadata iri from name or caption, and stop
+   synthesize useless metadata name from caption
+ - optimize tag parsing
+ - optimize: stop duplicate patterns and metadata to group objects
+ - reduce DefHash size by annotating traits as (:...:)
+ - update object beerware to fix examples and add IRI
+ - use annotation [*)] in object catosl_1_1 and in cc objects
+ - use attribute alt.org.steward, dropping (coding but not license naming)
+   organizers facebook freebsd gzip inria python
+
+v3.8.0	2021-07-27
+
+ [ Bug Fixes ]
+ - always check for optional shortname (regardless if some names contain
+   non-shortname parens) in synthesized grant patterns
+ - exclude shortname of versioned siblings in synthesized grant patterns
+ - use only defined publisher in synthesized name patterns
+
+ [ Test Suite ]
+ - avoid chained comparison in test, unsupported in older perls
+ - use Test2::V0 for test regexp-pattern.t
+
+ [ Other ]
+ - Added: add licenses bsd_protection condor condor_1_1 crossword d_fsl
+   d_fsl_1 dbad dbad_0_2 dbad_0_3 dbad_1 dbad_1_1 dont_ask fair_source
+   fair_source_0_9 fal fal_1_1 fal_1_2 fal_1_3 festival glide ibm_pibs ijg
+   imlib2 leptonica libtiff mpich2 mpl_2_no_copyleft_exception ms_cl nbpl
+   nbpl_1 nosl nosl_1 odbl odbl_1 odc_by odc_by_1 pddl pddl_1
+   peer_production sax_pd sds sds_1 sncl sncl_1_10 sncl_2_0_1 sncl_2_0_2
+   sncl_2_1 sncl_2_3 stlport truecrypt truecrypt_3 vspl wordnet wordnet_3
+   xfree86 xfree86_1_1 ypl ypl_1 ypl_1_1 zed zend zend_2 zimbra zimbra_1_3
+   zimbra_1_4
+ - collect names and captions separately in synthesized grant patterns
+ - deduplicate name prefix/suffix in synthesized grant patterns
+ - deduplicate names in synthesized grant patterns
+ - extend internal function _join_pats to handle hashref options label
+   prefix suffix
+ - tighten version matching in synthesized grant patterns
+
+v3.7.1	2021-07-22
+
+ [ Test Suite ]
+ - avoid deprecated special lang syntax in DefHash property names, and fix
+   typos
+
+ [ Other ]
+ - add license pattern for group object mit
+
+v3.7.0	2021-07-17
+
+ [ Bug Fixes ]
+ - avoid leading number in attribute component, to comply with DefHash spec
+ - fix metadata and pattern for license object x11
+
+ [ Documentation ]
+ - update TODOs
+
+ [ Other ]
+ - Added: add license object bsd_4_clause_uc
+ - Added: add license objects cc_devnations cc_devnations_2 cc_nc_sa
+   cc_nc_sa_1 cc_nc_sp cc_nc_sp_1 cc_nd_nc cc_nd_nc_1 cc_pd cc_pdd cc_pddc
+   cc_sampling cc_sampling_1 cc_sp_1
+ - Added: add license objects erlpl erlpl_1_1
+ - Added: add license objects gsoap gsoap_1_3b
+ - Added: add licenses mit_epinions mit_openvision mit_osf mit_unixcrypt
+   mit_whatever mit_widget mit_xfig
+ - Added: add trait objects except_font_2 except_gcc_2 except_gcc_3_1
+ - add annotation [:]
+ - add metadata from old fossology shortnames
+ - improve SPDX metadata
+ - improve metadata and license patterns for cc_* objects
+ - relax pattern for license object intel
+ - tighten and generalize expat-style grant subpattern
+ - tighten annotations [-] [ - ], to cover some forms of soft-wrapping
+ - tighten license patterns for apache_1 bsd_4_clause openssl to
+   disambiguate between them
+ - tighten metadata: consistently use misc (not alt) and only once
+
+v3.6.1	2021-07-07
+
+ [ Test Suite ]
+ - fix coverage-perl tests
+
+ [ Other ]
+ - add names and captions for https://tldrlegal.com/ website)
+
+v3.6.0	2021-07-04
+
+ [ Bug Fixes ]
+ - fix set trove metadata for gfdl mpl_1 mpl_1_1 mpl_2
+
+ [ Documentation ]
+ - add sections SYNOPSIS and EXAMPLES
+ - document origin of bsd_0_clause
+ - use _simpified_ chinese language code for mulan chinese strings
+
+ [ Test Suite ]
+ - add coverage for license ipl_1
+ - use Test2::V0 (not Test::Exception or Test::Requires)
+
+ [ Packaging ]
+ - stop declare dependency on strictures (unneeded since v3.0.31)
+
+ [ Other ]
+
+ - Added: add exception trait wxwindows
+ - Added: add family cc
+ - Added: add license ipa
+ - Added: add license xnet
+ - Added: add licenses bsd_1_clause bsd_2_clause_freebsd
+   bsd_2_clause_netbsd bsd_2_clause_patent
+ - Added: add licenses bsd_3_clause_attribution bsd_3_clause_clear
+   bsd_3_clause_lbnl bsd_3_clause_no_military_license
+   bsd_3_clause_no_nuclear_license bsd_3_clause_no_nuclear_license_2014
+   bsd_3_clause_no_nuclear_warranty naumen
+ - Added: add licenses efl efl_1 efl_2 entessa frameworx frameworx_1 lpl
+   lpl_1 lpl_1_02 ncsa nokia opl opl_1 oset_pl oset_pl_2_1 php php_3
+   php_3_01 simpl simpl_2 simple_w3c simple_w3c_1_1 upl upl_1 vsl vsl_1 x11
+ - Added: add licenses eudatagrid fair
+ - Added: add licenses hpnd hpnd_sell mit_open_group, and combo net_snmp
+ - Added: add licenses liliq_p liliq_p_1_1 liliq_r liliq_r_1_1 liliq_r_plus
+   liliq_r_plus_1_1
+ - Added: add licenses miros mit_0
+ - Added: add licenses multics nasa nasa_1_3
+ - Added: add licenses nposl nposl_3 ucl ucl_1
+ - Added: add licenses ogc ogc_1 w3c w3c_19980519 w3c_19980720 w3c_20021231
+   w3c_20150513
+ - Added: add licenses sleepycat tosl
+ - Added: add licenses unicode_dfs_2015 unicode_dfs_2016
+ - Added: add trait except_ecos_2, and licenses ecos_1_1 ecos_2
+ - add names and captions for OSI
+ - annotate "as-is" as [as is]
+ - improve annotations, and tighten to only use Latin-1 characters (now
+   only mulan* patterns contain non-Latin-1 characters)
+ - improve metadata for ipl ipl_1
+ - improve patterns for zpl_2 zpl_2_1
+ - optimize DefHash creation slightly
+ - stop use List::Util
+ - tighten patterns for licenses afl_3 osl_3
+ - update metadata for mpl_1 openssl
+
+v3.5.1	2021-06-02
+
+ [ Bug Fixes ]
+ - use desctructive substitution in tr///, needed with perl older than
+   v5.14
+
+ [ Test Suite ]
+ - cover all license strings of perl CPAN::META spec
+
+v3.5.0	2021-06-22
+
+ [ Bug Fixes ]
+ - always favor single-version metadata when joined in versioned objects
+   (not randomly flip priority)
+ - capitalize name of exception except_openssl
+ - fix language strings to use ll_CC in DefHash and ll-cc in GNU URLs
+ - include all member patterns in series objects (not a random subset)
+   Walter Lozano++
+ - version_later version_only: cover lack of leading punctuation or space
+
+ [ Documentation ]
+ - update TODOs
+
+ [ Other ]
+ - Added: add license bsd_0_clause
+ - Added: add license cvw
+ - Added: add license intel
+ - Added: add license jabberpl
+ - Added: add license motosoto
+ - Added: add licenses cal cal_1
+ - Added: add licenses mulan mulan_1 mulan_2
+ - Added: add licenses oldap oldap_1_1 oldap_1_2 oldap_1_3 oldap_1_4
+   oldap_2 oldap_2_0_1 oldap_2_1 oldap_2_2 oldap_2_2_1 oldap_2_2_2
+   oldap_2_3 oldap_2_4 oldap_2_5 oldap_2_6 oldap_2_7 oldap_2_8
+ - Added: add licenses sissl sissl_1_1 sissl_1_2
+ - Added: add name and caption for perl (as listed in POD of
+   CPAN::Meta::Spec)
+ - add description and extend patterns for licenses bittorrent_1
+   bittorrent_1_1
+ - annotate more consistently as [word] [ word]
+
+v3.4.0	2020-05-21
+
+ [ Bug Fixes ]
+ - version_later_postfix: cover lack of leading space
+
+ [ Test Suite ]
+ - relax deep inspection of generated regex
+
+ [ Other ]
+ - Added: add trait object generated
+ - Added: add trait objects addr_fsf addr_fsf_franklin
+   addr_fsf_franklin_steet addr_fsf_mass addr_fsf_temple
+ - Added: add trait objects except_autoconf_data except_autoconf_2
+   except_autoconf_2_archive except_autoconf_2_autotroll
+   except_autoconf_2_g10 except_autoconf_3 except_bison_1_24
+   except_bison_2_2 except_faust except_openssl except_openssl-lgpl
+   except_openssl_s3 except_prefix_agpl except_prefix_generic
+   except_prefix_gpl except_prefix_gpl_clisp except_prefix_lgpl
+   except_proguard except_qt_gpl_1 except_qt_gpl_eclipse
+   except_qt_gpl_openssl except_qt_kernel except_qt_lgpl_1_1
+   except_qt_nosource except_sdc except_sollya_4_1 except_warzone
+   except_xerces
+ - apache apache_1_1 apache_2: add caption for 'Apache Public License' and
+   'Apache Software License'
+ - bittorrent_1: fix list alternate SPDX caption (not bogusly as iri)
+ - bsd_3_clause: add names 'EPL' 'EPL-1.0', and captions 'new BSD License'
+   'Eclipse Distribution License'
+ - license gpl_2: cover 'is covered by he GNU' (original revision with
+   typo)
+ - licensed_under: cover 'subject to'
+ - reorder patterns: traits before licenses
+ - synthesized grants: cover 'the $license version 2 (the $shortname
+   License)'
+
+v3.3.1	2020-05-17
+
+ [ Bug Fixes ]
+ - annotate apostrophe
+ - avoid annotating decimal point as full stop
+ - consistently annotate slash as [/]
+ - disambiguate license patterns for objects agpl_2 agpl-3 gpl-2 gpl-3
+ - fix annotate apostrophe as such (not as quote)
+ - fix object wtfpl_2 license pattern
+ - fix trove caption for object mpl_2
+ - subject pattern name: fix make leading space of publisher optional
+ - synthesized trove label trait: include trailing space
+ - update license object cecill: add alternate IRI (not bogus URI)
+ - update object gpl_2: fix detect license preamble (to avoid misdetection
+   as LGPL-2)
+ - update object mit_advertising: fix double-escaped boundary marker in
+   patch (although seemingly didn't matter)
+
+ [ Documentation ]
+ - document tag license:contains:tag:*: extend to cover optional reference
+   to different license
+ - document tag license:includes:license:*
+ - fix include type:usage:*:* in list of possible single-license tags, and
+   order by inheritance complexity (not alphabetically)
+
+ [ Other ]
+ - Added: add license object qpl_1
+ - Added: add license objects aal abstyles adsl afmparse amdplpa antlr_pd
+ - Added: add license objects aml ampas ecl ecl_1 ecl_2 eupl eupl_1
+   eupl_1_1 eupl_1_2 lppl lppl_1 lppl_1_1 lppl_1_2 lppl_1_3a lppl_1_3c npl
+   npl_1 npl_1_1 oclc oclc_1 oclc_2 ogtsl osl osl_1 osl_1_1 osl_2 osl_2_1
+   osl_3 rpl rpl_1 rpl_1_1 rpl_1_3 rpl_1_5 rscpl ruby spl spl_1 sugarcrm
+   sugarcrm_1_1_3 unlicense watcom watcom_1
+ - Added: add license objects apl apl_1 apsl apsl_1 apsl_1_1 apsl_1_2
+   apsl_2
+ - Added: add license objects bahyph barr bittorrent bittorrent_1
+   bittorrent_1_1 borceux
+ - Added: add license objects bzip2 bzip2_1_0_5 bzip2_1_0_6
+ - Added: add license objects caldera catosl catosl_1_1
+ - Added: add license objects cnri_jython cnri_python
+   cnri_python_gpl_compat cpal cpal_1
+ - Added: add license objects cpol cpol_1_02 cryptix
+ - Added: add license objects cua_opl cua_opl_1
+ - Added: add license objects gfdl_1_1 gfdl_1_2 gfdl_1_3
+ - Added: add license objects gfdl_1_1_only gfdl_1_1_or_later gfdl_1_2_only
+   gfdl_1_2_or_later gfdl_1_3_only gfdl_1_3_or_later
+ - Added: add license patterns lgpl_2 lgpl-2_1 lgpl-3
+ - Added: add trait object version_only
+ - Added: add trait object version_suffix
+ - Added: add usage objects agpl_1_only agpl_1_or_later agpl_3_only
+   agpl_3_or_later
+ - Added: add usage objects gpl_1_only gpl_1_or_later gpl_2_only
+   gpl_2_or_later gpl_3_only gpl_3_or_later
+ - Added: add usage objects lgpl_2_only lgpl_2_or_later lgpl_2_1_only
+   lgpl_2_1_or_later lgpl_3_only lgpl_3_or_later
+ - annnotate less-than and greater-than as [<] [>] (not $LT $GT)
+ - annotate apostrophe as ['] (not $QA)
+ - annotate bullet as [*] (not $B)
+ - annotate colon with optional quotes as [:"] (not $CQ)
+ - annotate copyright sign as [c] (not $C)
+ - annotate dash or number as [-#] (not $ND)
+ - annotate dash or space as [- ] (not $SD)
+ - annotate dashes as [-] [ - ] (not $D $DD)
+ - annotate end-of-sentence and end-of-paragraph vertical space as [ ] [  ]
+   (not $E $EE)
+ - annotate exempli gratia and id est abbreviations as [eg] [ie]
+ - annotate full stop as [.] (not $F)
+ - annotate http(s) protocol as [http://] (not $HT)
+ - annotate optional slash or space as [/] (not $SL)
+ - annotate quote as ["] (not $Q)
+ - annotate quote or bullet as ["*] (not  $QB)
+ - annotate semicolon as [;] (not $SC)
+ - annotate start-of-sentence bullet or count as [*)] (not $BB)
+ - drop alternate british caption: covered by synthesized subject pattern
+ - extend gnu patterns to cover FSF online and postal addresses
+ - generalize use of semicolon as internal variable SC
+ - license objects: drop most custom subject pattern grant, superceded by
+   synthesized pattern
+ - license objects: drop most custom subject pattern name, superceded by
+   synthesized pattern
+ - optimize slightly: sort keys after grep (not before)
+ - relax internal variable gpl to cover lowercase 'license'
+ - singleversion objects: add field licenseversion, with decimal 0 if ever
+   used
+ - synthesize subject pattern name: compose affixes separately
+ - synthesize subject pattern name: cover british spelling licence
+ - synthesize subject pattern name: cover dash variations
+ - synthesize subject pattern name: cover embedded shortname
+ - synthesize subject pattern name: cover leading version
+ - synthesize subject pattern name: cover usage objects
+ - synthesize subject pattern name: optimize version matching
+ - synthesize subject pattern name: optimize: resolve publisher only once
+   per object
+ - synthesize subject pattern name: simplify: optimize: bundle names
+   together
+ - tighten match for quote character
+ - trait object version_prefix: cover word revision
+ - update combo object perl: add tags
+   license:includes:license:artistic_1_perl
+   license:includes:license:gpl_1_or_newer
+ - update combo object perl: improve coverage
+ - update group objects bsd mit: add name and caption for a BSD-style / an
+   MIT-style; cover a/an when synthesizing subject pattern
+ - update group objects bsd-2-clause bsd-3-clause bsd-4-clause: add
+   informal alternate names
+ - update license object bittorent_1_1: add tag
+   license:contains:grant:bittorrent_1
+ - update license object bsd_2_clause: tighten license pattern to exclude
+   Cryptix license
+ - update license object cpl_1: add iri and alternative caption
+ - update license object openssl: add tag license:contains:license:cryptix
+ - update license objects cddl_1 cddl_1_1: add alternative names and
+   captions
+ - update object bsd_3_clause: add a few more alternate captions
+ - update object licensed_under: cover trailing 'either'
+ - update object licensed_under: simplify pattern slightly
+ - update trait object licensed_under: cover 'available under'
+ - update trait object licensed_under: cover 'distribute it under'
+
+v3.3.0	2020-03-13
+
+ [ Bug Fixes ]
+ - avoid synthesizing pattern grant from ambiguous name BSD for objects
+   bsd_2_clause bsd_3_clause
+ - fix tag object llgpl as license:contains:license:lgpl_2_1 (not bogus
+   license:contains:license:llgpl_2_1)
+ - synthesize patterns in deterministic order
+ - tighten object zpl_2 pattern license to disambiguate from bsd
+
+ [ Other ]
+ - add license patterns gpl-1 gpl-2 gpl-3
+ - add trait patterns by by_apache by_fsf by_james_clark by_psf
+   by_sam_hocevar
+ - add trove caption for mpl_1 mpl_1_1 mpl_2
+ - add unofficial option anchorleft
+ - drop deprecated tags bsd cc mit zlib trait combo (replaced since v3.1.0
+   by family:* type:*)
+ - enable RE2 strict mode
+ - enable re::engine::RE2 greedy mode
+ - extend license object apache_2 to cover a few rare grant patterns
+ - extend license pattern agpl-3 to mask more licensed_under
+ - extend synthesized subject pattern name to include optional publisher
+ - extend trait pattern licensed_under to cover "under _either_ ..."
+ - extend trait pattern version to cover a trailing 'of' (needed when
+   prepended)
+ - introduce tags license:published:*
+ - simplify synthesized versioned grant pattern
+ - tighten license patterns agpl-1 agpl-3 to avoid wildcard
+ - tighten trait object version_number to not grab first digit of a larger
+   number
+
+v3.2.0	2020-02-21
+
+ [ Bug Fixes ]
+ - add trove caption for zpl (not zpl_1)
+
+ [ Other ]
+ - add object ssleay
+ - add usage objects ofl_1_no_rfn ofl_1_rfn ofl_1_1_no_rfn ofl_1_1_rfn, and
+   trait object usage_rfn
+ - introduce tags type:usage:*:* type:trait:usage:rfn
+ - relax generally to treat / as optional or replaced by space
+ - relax license object bsd_3_clause to treat full-stop as optional
+
+v3.1.102	2020-02-10
+
+ [ Bug Fixes ]
+ - tag object cc_cc0_1 as type:singleversion:cc_cc0 (not bogusly
+   type:versioned:decimal)
+ - tag objects bdwgc_matlab lgpl_bdwgc as type:unversioned (not bogusly
+   type:versioned:decimal)
+
+ [ Other ]
+ - add objects agpl_1 agpl_2 agpl_3
+ - add objects zpl zpl_1 zpl_1_1 zpl_2 zpl_2_1
+ - extend license pattern cecill_1_1 to fully mask any_of
+ - extend license patterns cecill_1_1 cecill_2 cecill_2_1 to avoid
+   misdetecting as GPL-2+
+ - extend trait pattern licensed_under to cover more phrases
+ - stop custom-treat name-only as grant for select objects (some use for
+   that now better done with tag license:is:grant)
+ - tag objects license_label license_label_trove licensed_under as
+   type:trait:grant:prefix (not type:trait)
+
+v3.1.101	2020-01-30
+
+ [ Documentation ]
+ - add description for object epl
+
+ [ Other ]
+ - Added: add object cc_cc0_1
+ - Added: add objects cc_by_1 cc_by_2 cc_by_2_5 cc_by_3 cc_by_4
+ - Added: add objects cc_by_nc_1 cc_by_nc_2 cc_by_nc_2_5 cc_by_nc_3
+   cc_by_nc_4
+ - Added: add objects cc_by_nc_nd_1 cc_by_nc_nd_2 cc_by_nc_nd_2_5
+   cc_by_nc_nd_3 cc_by_nc_nd_4
+ - Added: add objects cc_by_nc_sa_1 cc_by_nc_sa_2 cc_by_nc_sa_2_5
+   cc_by_nc_sa_3 cc_by_nc_sa_4
+ - Added: add objects cc_by_nd_1 cc_by_nd_2 cc_by_nd_2_5 cc_by_nd_3
+   cc_by_nd_4
+ - Added: add objects cc_by_sa_1 cc_by_sa_2 cc_by_sa_2_5 cc_by_sa_3
+   cc_by_sa_4
+ - Added: add objects cc_nc cc_nc_1 cc_nd cc_nd_1 cc_sa cc_sa_1
+ - Added: add objects cddl_1 cddl_1_1
+ - Added: add objects cpl cpl_1 epl_1 epl_2 ipl ipl_1
+ - Added: add objects mpl_1 mpl_1_1 mpl_2
+ - Added: add objects ofl_1 ofl_1_1
+ - Added: add objects sgi_b_1 sgi_b_1_1 sgi_b_2
+ - relax to match copyright sign as uppercase (C)
+ - synthesize more CC subject patterns
+
+v3.1.100	2020-01-28
+
+ [ REGRESSIONS ]
+ - temporarily drop subject license pattern from object afl (clashes with
+   those of versioned child objects)
+
+ [ Bug Fixes ]
+ - tighten object adobe_2006 pattern grant to avoid false positives
+
+ [ Documentation ]
+ - add description for license objects apache_1 apache_1_1
+ - update TODO
+
+ [ Test Suite ]
+ - test actually used name pattern for adobe_2006 object
+
+ [ Other ]
+ - add Trove captions
+ - add tag license:contains:* for license objects apache_1 apache_1_1
+   bsd_3_clause bsd_4_clause dsdp
+ - add trait object license_label_trove
+ - extend subject license patterns for license objects apache_1 apache_1_1
+   apache_2 bsd_2_clause bsd_3_clause bsd_4_clause dsdp
+ - relax leading bullet to be optional (might be misdetected as comment
+   marker and stripped)
+ - relax object gpl to match bogus name "the GNU License"
+ - relax slightly internal pattern copr_cond_discl
+ - relax trait pattern licensed_under to cover more phrases
+ - relax trait pattern licensed_under to cover more phrases
+ - relax trait pattern licensed_under to cover more phrases
+ - synthesize subject pattern grant from Trove caption
+ - tighten trait object version_number to cover only single-digit segment
+
+v3.1.99	2020-01-05
+
+ [ REGRESSIONS ]
+ - give up on auto-loading for now, and support only RE2 (not PCRE2)
+
+ [ Packaging ]
+ - require (not recommend) re::engine::RE2, and stop recommend
+   re::engine::PCRE2
+
+v3.1.98	2020-01-05
+
+ [ Test Suite ]
+ - fix: test for the proper module for each test (arrgh)
+
+v3.1.97	2020-01-05
+
+ [ Test Suite ]
+ - fix: test if re::engine::* is available before testing use of those
+   modules
+
+ [ Packaging ]
+ - test-require module Test::Requires
+
+v3.1.96	2020-01-04
+
+ [ Documentation ]
+ - add examples for object beerware
+
+ [ Test Suite ]
+ - extend testsuite with Test::Regexp::Pattern tests
+
+ [ Packaging ]
+ - recommend modules re::engine::PCRE2 re::engine::RE2
+ - test-require module Test::Regexp::Pattern
+
+ [ Other ]
+ - add option engine
+ - add tags license:is:grant license:contains:grant
+   license:contains:license:* license:contains:name:*
+ - extend object llgpl: Add alternate cliki iri
+ - internalize list of GNU locales
+
+v3.1.95	2020-01-03
+
+ [ Bug Fixes ]
+ - declare alternate caption (not name) for object mit
+ - tag object artistic as type:versioned:complex
+
+ [ Other ]
+ - Add object rpsl_1.
+ - Add objects apache_1 apache_1_1 apache_2.
+ - Add objects artistic_1 artistic_1_cl8 artistic_1_clarified
+   artistic_1_perl.
+ - Extend object afl to cover subject patterns grant license (not only
+   name). Add objects afl_1_1 afl_1_2 afl_2 afl_2_1 afl_3.
+ - Extend object wtfpl. Add objects wtfpl_1 wtfpl_2 wtfnmfpl wtfnmfpl_1.
+ - Extend objects cecill cecill_1 cecill_1_1 cecill_2 cecill_2_1 cecill_b
+   cecill_c. Add objects cecill_b_1 cecill_c_1.
+ - Improve object jython: Extend metadata.
+ - add alternate long caption for object bsd
+ - relax internal bullet pattern to match up to 5 digits/chars
+ - relax many patterns to match british spelling of licence
+ - relax slightly trait pattern licensed_under to match strings with
+   capital You
+ - relax trait pattern licensed_under to match "covered by"
+ - relax trait pattern version_prefix and synthesized grant patterns to
+   match more version strings
+ - synthesize patterns matching license granting declared as definition,
+   i.e. in the form License: foo
+ - tighten synthesized grant patterns to avoid matching derived versions
+
+v3.1.94	2019-06-12
+
+ [ Bug Fixes ]
+ - Fix DOAP bug-database and repository URLs.
+   Slaven Rezić++
+
+ [ Test Suite ]
+ - Extend testsuite: Cover objects aladdin_8 aladdin_9.
+
+ [ Packaging ]
+ - Fix declare test-requirement on Try::Tiny.
+   Slaven Rezić++
+
+ [ Other ]
+ - Extend object bsl_1: Add subject pattern license. Improve metadata.
+ - Extend trait patterns version version_later version_numberstring
+   version_prefix: Cover scopes line sentence. Limit scope paragraph.
+ - Fix objects aladdin aladdin_8 aladdin_9: Add subject pattern license for
+   singleversion licenses and drop for versioned license.
+ - Fix relax trait pattern version_later_postfix: Detect "any above".
+ - Fix relax trait pattern version_prefix: Tolerate leading only/either.
+ - Improve synthesized subject pattern grant: Use trait pattern
+   licensed_under (not simpler copy).
+ - Limit length of subpatterns BB (bullets) E (end of sentence) EE (end of
+   paragraph) and lang, both for slight speedup and to limit risk of issues
+   like Debian bug#926392.
+ - Relax synthesized name pattern to make commas optional (not strip them).
+ - Relax trait pattern version_prefix: Include optional non-text prefix
+   (not only in pattern version).
+ - Relax trait pattern version_prefix: Make whole pattern optional (not its
+   use in version_numberstring).
+ - Synthesize subject pattern name.
+
+v3.1.93	2019-06-08
+
+ [ Bug Fixes ]
+ - Fix DOS in pattern for leading bullets.
+   Niels Thykier++
+   Sandro Mani++
+
+ [ Other ]
+ - Avoid regex option /r to support Perl < 5.14.
+ - Extend trait pattern licensed_under.
+ - Fix metadata for object afl: Drop bogus tldr name. Slightly improve
+   metadata for object adobe_glyph.
+
+v3.1.92	2018-04-05
+
+ [ Bug Fixes ]
+ - Fix avoid chained regexes (seemingly unsupported in perl <5.16).
+
+ [ Documentation ]
+ - Update and slightly reorganize TODOs.
+
+ [ Other ]
+ - Added: Add trait objects any_of licensed_under or_at_option version
+   version_numberstring.
+ - Added: Implement DefHash option "capture".
+ - Improve embedded summary (and related comment) for option "subject".
+ - Stop cache compiled patterns internally: Not part of Regexp::Pattern
+   spec and better handled externally when really needed.
+
+v3.1.91	2018-03-30
+
+ [ Bug Fixes ]
+ - Fix avoid alternate name MIT except for objects expat mit.
+ - Fix metadata for object aladdin: Use tag type:versioned:decimal (not
+   type:unversioned).
+ - Fix resolve Fedora IRIs.
+
+ [ Other ]
+ - Added: Add objects aladdin_8 aladdin_9.
+ - Added: Cover more types of generic grants (used mostly for llgpl and
+   gpl).
+ - Added: Extend object llgpl: Add canonical iri.
+
+v3.1.90	2018-03-29
+
+ [ Bug Fixes ]
+ - Fix object cecill_b subject pattern license.
+ - Fix object fsfullr to match grant at all.
+ - Fix relax object mit_new_materials to match license at all.
+ - Fix strip duplicate tagline for object ntp, accidentally suppressing tag
+   family:mit.
+ - Tighten objects qpl sgi_b: Avoid bogusly match optional trailing FSF
+   credit.
+
+ [ Documentation ]
+ - Add TODO file to source, with a bunch of ideas.
+
+ [ Test Suite ]
+ - Extend testsuite to cover most license patterns.
+
+ [ Other ]
+ - Added: Add object json.
+ - Added: Add object kevlin_henney (replacing recently added but broken
+   isc_minidiscl).
+ - Added: Add objects bsl bsl_1.
+ - Added: Add objects jython python_2.
+ - Added: Extend object cc_cc0: Add subject pattern grant.
+ - Added: Extend object ftl: Add subject pattern license.
+ - Added: Extend objects ms_pl ms_rl: Add subject pattern license.
+ - Added: Generate default pattern dynamically, and provide alternative
+   subject patterns statically as plaintext (also for non-Perl use). Drop
+   alternative flavor pattern artifact.
+ - Added: Implement DefHash option "subject".
+ - Added: Synthesize metadata caption, and subject pattern grant.
+ - Added: Synthesize metadata iri, and subject pattern iri.
+ - Added: Synthesize subject pattern license.
+ - Extend metadata: Add iri.
+ - Extend object public_domain: Improve subject pattern license.
+ - Fix and extend metadata: Consistently use "name" for license shortname
+   (i.e. single-word), "caption" for license name, and "summary" for
+   non-name short description.
+ - Fix metadata for objects cecill_b cecill_c: Use tag
+   type:versioned:decimal (not type:unversioned).
+ - Implement per-object default pattern.
+ - Relax license objects agpl beerware gpl lgpl public_domain qpl: Detect
+   uppercase variations.
+ - Relax object bsd_3_clause to match SPDX template.
+ - Stringify patterns (as preparation for central compilation).
+ - Synthesize metadata name.
+ - Synthesize subject pattern trait.
+ - Tighten  object openssl to differentiate from apache_1.
+ - Tighten object eurosym: Avoid wildcard.
+ - Tighten object postgresql: Limit to lowercase pattern (uppercase or
+   varying case seemingly unused).
+ - Tighten objects ntp ntp_disclaimer: Disambiguate from kevlin_henney.
+ - Uniformly detect copyright sign.
+ - Uniformly detect hyphens.
+ - Uniformly detect quotation marks.
+ - Uniformly detect sentence and paragraph endings.
+ - Uniformly detect sentence enumerators.
+
+v3.1.0	2018-02-09
+
+ [ Documentation ]
+ - Improve POD: Fix list covered licenses aladdin icu mit_cmu
+   mit_cmu_warranty ofl rpsl.
+ - Improve POD: Rephrase sections about license combinations and license
+   groups, to better disambiguate.
+
+ [ Other ]
+ - Added: Add hierarchical tags family:* type:*. Deprecate undocumented
+   non-hierarchical tags.
+ - Added: Add license patterns bdwgc bdwgc_matlab isc_minidiscl lgpl_bdwgc.
+ - Added: Introduce alternate license patterns: pat.alt.flavor.artifact.
+
+v3.0.31	2017-08-15
+
+ [ Packaging ]
+ - Initial independent CPAN release (based on App::Licensecheck).
+
+ [ Other ]
+ - Use strict and warnings (not strictures).

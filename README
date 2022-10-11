@@ -1,0 +1,2064 @@
+NAME
+    Regexp::Pattern::License - Regular expressions for legal licenses
+
+VERSION
+    Version v3.9.3
+
+SYNOPSIS
+        use Regexp::Pattern::License;
+        use Regexp::Pattern;
+
+        my $string = 'GNU General Public License version 3 or later';
+
+        print "Found!\n" if $string =~ re( 'License::gpl_3' );  # prints "Found!"
+
+DESCRIPTION
+    Regexp::Pattern::License provides a hash of regular expression patterns
+    related to legal software licenses.
+
+    Regexp::Pattern is a convention for organizing reusable regex patterns.
+
+PATTERNS
+  Licensing traits
+    Patterns each covering a single trait occuring in licenses.
+
+    Each of these patterns has the tag type:trait .
+
+    *   addr_fsf
+
+        *Since v3.4.0.*
+
+    *   addr_fsf_franklin
+
+        *Since v3.4.0.*
+
+    *   addr_fsf_franklin_steet
+
+        *Since v3.4.0.*
+
+    *   addr_fsf_mass
+
+        *Since v3.4.0.*
+
+    *   addr_fsf_temple
+
+        *Since v3.4.0.*
+
+    *   any_of
+
+        *Since v3.1.92.*
+
+    *   by
+
+        *Since v3.3.0.*
+
+    *   by_apache
+
+        *Since v3.3.0.*
+
+    *   by_fsf
+
+        *Since v3.3.0.*
+
+    *   by_james_clark
+
+        *Since v3.3.0.*
+
+    *   by_psf
+
+        *Since v3.3.0.*
+
+    *   by_sam_hocevar
+
+        *Since v3.3.0.*
+
+    *   clause_retention
+
+    *   clause_reproduction
+
+    *   clause_advertising
+
+    *   clause_advertising_always
+
+    *   clause_non_endorsement
+
+    *   except_389
+
+    *   except_autoconf_data
+
+        *Since v3.4.0.*
+
+    *   except_autoconf_2
+
+        *Since v3.4.0.*
+
+    *   except_autoconf_2_archive
+
+        *Since v3.4.0.*
+
+    *   except_autoconf_2_autotroll
+
+        *Since v3.4.0.*
+
+    *   except_autoconf_2_g10
+
+        *Since v3.4.0.*
+
+    *   except_autoconf_3
+
+        *Since v3.4.0.*
+
+    *   except_bison_1_24
+
+        *Since v3.4.0.*
+
+    *   except_bison_2_2
+
+        *Since v3.4.0.*
+
+    *   except_classpath_2
+
+    *   except_ecos_2
+
+        *Since v3.6.0.*
+
+    *   except_epl
+
+    *   except_epl_mpl
+
+    *   except_faust
+
+        *Since v3.4.0.*
+
+    *   except_font_2
+
+        *Since v3.7.0.*
+
+    *   except_gcc_2
+
+        *Since v3.7.0.*
+
+    *   except_gcc_3_1
+
+        *Since v3.7.0.*
+
+    *   except_gstreamer
+
+    *   except_libtool
+
+    *   except_mif
+
+    *   except_openssl
+
+        *Since v3.4.0.*
+
+    *   except_ocaml-lgpl
+
+    *   except_openssl-lgpl
+
+        *Since v3.4.0.*
+
+    *   except_openssl_s3
+
+        *Since v3.4.0.*
+
+    *   except_prefix_agpl
+
+        *Since v3.4.0.*
+
+    *   except_prefix_generic
+
+        *Since v3.4.0.*
+
+    *   except_prefix_gpl
+
+        *Since v3.4.0.*
+
+    *   except_prefix_gpl_clisp
+
+        *Since v3.4.0.*
+
+    *   except_prefix_lgpl
+
+        *Since v3.4.0.*
+
+    *   except_proguard
+
+        *Since v3.4.0.*
+
+    *   except_qt_gpl_1
+
+        *Since v3.4.0.*
+
+    *   except_qt_gpl_eclipse
+
+        *Since v3.4.0.*
+
+    *   except_qt_gpl_openssl
+
+        *Since v3.4.0.*
+
+    *   except_qt_kernel
+
+        *Since v3.4.0.*
+
+    *   except_qt_lgpl_1_1
+
+        *Since v3.4.0.*
+
+    *   except_qt_nosource
+
+        *Since v3.4.0.*
+
+    *   except_sdc
+
+        *Since v3.4.0.*
+
+    *   except_sollya_4_1
+
+        *Since v3.4.0.*
+
+    *   except_warzone
+
+        *Since v3.4.0.*
+
+    *   except_wxwindows
+
+        *Since v3.6.0.*
+
+    *   except_xerces
+
+        *Since v3.4.0.*
+
+    *   fsf_unlimited
+
+    *   fsf_unlimited_retention
+
+    *   generated
+
+        *Since v3.4.0.*
+
+    *   license_label
+
+    *   license_label_spdx
+
+        *Since v3.9.0.*
+
+    *   license_label_trove
+
+        *Since v3.1.100.*
+
+    *   licensed_under
+
+        *Since v3.1.92.*
+
+    *   or_at_option
+
+        *Since v3.1.92.*
+
+    *   usage_rfn
+
+        *Since v3.2.0.*
+
+    *   version
+
+        *Since v3.1.92.*
+
+    *   version_later
+
+    *   version_later_paragraph
+
+    *   version_later_postfix
+
+    *   version_number
+
+    *   version_number_suffix
+
+    *   version_only
+
+    *   version_prefix
+
+    *   version_numberstring
+
+        *Since v3.1.92.*
+
+  Single licenses
+    Patterns each covering a single license.
+
+    Each of these patterns has exactly one of these tags: type:unversioned
+    type:versioned:decimal type:singleversion:* type:usage:*:* .
+
+    *   aal
+
+    *   abstyles
+
+    *   adobe_2006
+
+    *   adobe_glyph
+
+    *   adsl
+
+    *   afl
+
+    *   afl_1_1
+
+        *Since v3.1.95.*
+
+    *   afl_1_2
+
+        *Since v3.1.95.*
+
+    *   afl_2
+
+        *Since v3.1.95.*
+
+    *   afl_2_1
+
+        *Since v3.1.95.*
+
+    *   afl_3
+
+        *Since v3.1.95.*
+
+    *   afmparse
+
+    *   agpl
+
+    *   agpl_1
+
+        *Since v3.1.102.*
+
+    *   agpl_1_only
+
+    *   agpl_1_or_later
+
+    *   agpl_2
+
+    *   agpl_3
+
+    *   agpl_3_only
+
+    *   agpl_3_or_later
+
+    *   aladdin
+
+    *   aladdin_8
+
+        *Since v3.1.91.*
+
+    *   aladdin_9
+
+        *Since v3.1.91.*
+
+    *   amdplpa
+
+    *   aml
+
+    *   ampas
+
+    *   antlr_pd
+
+    *   apache
+
+    *   apache_1
+
+        *Since v3.1.95.*
+
+    *   apache_1_1
+
+        *Since v3.1.95.*
+
+    *   apache_2
+
+        *Since v3.1.95.*
+
+    *   apafml
+
+    *   apl
+
+    *   apl_1
+
+    *   apsl
+
+    *   apsl_1
+
+    *   apsl_1_1
+
+    *   apsl_1_2
+
+    *   apsl_2
+
+    *   artistic
+
+    *   artistic_1
+
+        *Since v3.1.95.*
+
+    *   artistic_1_cl8
+
+        *Since v3.1.95.*
+
+    *   artistic_1_perl
+
+        *Since v3.1.95.*
+
+    *   artistic_2
+
+    *   bahyph
+
+    *   barr
+
+    *   bdwgc
+
+        *Since v3.1.0.*
+
+    *   bdwgc_matlab
+
+        *Since v3.1.0.*
+
+    *   beerware
+
+    *   bittorrent
+
+    *   bittorrent_1
+
+    *   bittorrent_1_1
+
+    *   borceux
+
+    *   bsd_0_clause
+
+        *Since v3.5.0.*
+
+    *   bsd_1_clause
+
+        *Since v3.6.0.*
+
+    *   bsd_2_clause
+
+    *   bsd_2_clause_freebsd
+
+        *Since v3.6.0.*
+
+    *   bsd_2_clause_netbsd
+
+        *Since v3.6.0.*
+
+    *   bsd_2_clause_patent
+
+        *Since v3.6.0.*
+
+    *   bsd_2_clause_views
+
+    *   bsd_3_clause
+
+    *   bsd_3_clause_attribution
+
+        *Since v3.6.0.*
+
+    *   bsd_3_clause_clear
+
+        *Since v3.6.0.*
+
+    *   bsd_3_clause_eclipse
+
+        *Since v3.9.0.*
+
+    *   bsd_3_clause_lbnl
+
+        *Since v3.6.0.*
+
+    *   bsd_3_clause_modification
+
+    *   bsd_3_clause_no_military_license
+
+        *Since v3.6.0.*
+
+    *   bsd_3_clause_no_nuclear_license
+
+        *Since v3.6.0.*
+
+    *   bsd_3_clause_no_nuclear_license_2014
+
+        *Since v3.6.0.*
+
+    *   bsd_3_clause_no_nuclear_warranty
+
+        *Since v3.6.0.*
+
+    *   bsd_3_clause_refractions
+
+        *Since v3.9.0.*
+
+    *   bsd_4_clause
+
+    *   bsd_4_clause_uc
+
+        *Since v3.7.0.*
+
+    *   bsd_protection
+
+        *Since v3.8.0.*
+
+    *   bsl
+
+        *Since v3.1.90.*
+
+    *   bsl_1
+
+        *Since v3.1.90.*
+
+    *   bzip2
+
+    *   bzip2_1_0_5
+
+    *   bzip2_1_0_6
+
+    *   cal
+
+        *Since v3.5.0.*
+
+    *   cal_1
+
+        *Since v3.5.0.*
+
+    *   caldera
+
+    *   catosl
+
+    *   catosl_1_1
+
+    *   cc_by
+
+    *   cc_by_1
+
+        *Since v3.1.101.*
+
+    *   cc_by_2
+
+        *Since v3.1.101.*
+
+    *   cc_by_2_5
+
+        *Since v3.1.101.*
+
+    *   cc_by_3
+
+        *Since v3.1.101.*
+
+    *   cc_by_4
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc
+
+    *   cc_by_nc_1
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_2
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_2_5
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_3
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_4
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_nd
+
+    *   cc_by_nc_nd_1
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_nd_2
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_nd_2_5
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_nd_3
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_nd_4
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_sa
+
+    *   cc_by_nc_sa_1
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_sa_2
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_sa_2_5
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_sa_3
+
+        *Since v3.1.101.*
+
+    *   cc_by_nc_sa_4
+
+        *Since v3.1.101.*
+
+    *   cc_by_nd
+
+    *   cc_by_nd_1
+
+        *Since v3.1.101.*
+
+    *   cc_by_nd_2
+
+        *Since v3.1.101.*
+
+    *   cc_by_nd_2_5
+
+        *Since v3.1.101.*
+
+    *   cc_by_nd_3
+
+        *Since v3.1.101.*
+
+    *   cc_by_nd_4
+
+        *Since v3.1.101.*
+
+    *   cc_by_sa
+
+    *   cc_by_sa_1
+
+        *Since v3.1.101.*
+
+    *   cc_by_sa_2
+
+        *Since v3.1.101.*
+
+    *   cc_by_sa_2_5
+
+        *Since v3.1.101.*
+
+    *   cc_by_sa_3
+
+        *Since v3.1.101.*
+
+    *   cc_by_sa_4
+
+        *Since v3.1.101.*
+
+    *   cc_cc0
+
+    *   cc_cc0_1
+
+        *Since v3.1.101.*
+
+    *   cc_devnations
+
+        *Since v3.7.0.*
+
+    *   cc_devnations_2
+
+        *Since v3.7.0.*
+
+    *   cc_nc
+
+        *Since v3.1.101.*
+
+    *   cc_nc_1
+
+        *Since v3.1.101.*
+
+    *   cc_nc_sa
+
+        *Since v3.7.0.*
+
+    *   cc_nc_sa_1
+
+        *Since v3.7.0.*
+
+    *   cc_nc_sp
+
+        *Since v3.7.0.*
+
+    *   cc_nc_sp_1
+
+        *Since v3.7.0.*
+
+    *   cc_nd_nc
+
+        *Since v3.7.0.*
+
+    *   cc_nd_nc_1
+
+        *Since v3.7.0.*
+
+    *   cc_nd
+
+        *Since v3.1.101.*
+
+    *   cc_nd_1
+
+        *Since v3.1.101.*
+
+    *   cc_pd
+
+        *Since v3.7.0.*
+
+    *   cc_pdd
+
+        *Since v3.7.0.*
+
+    *   cc_pddc
+
+        *Since v3.7.0.*
+
+    *   cc_sa
+
+        *Since v3.1.101.*
+
+    *   cc_sa_1
+
+        *Since v3.1.101.*
+
+    *   cc_sampling
+
+        *Since v3.7.0.*
+
+    *   cc_sampling_1
+
+        *Since v3.7.0.*
+
+    *   cc_sp
+
+    *   cc_sp_1
+
+        *Since v3.7.0.*
+
+    *   cddl
+
+    *   cddl_1
+
+        *Since v3.1.101.*
+
+    *   cddl_1_1
+
+        *Since v3.1.101.*
+
+    *   cecill
+
+    *   cecill_1
+
+    *   cecill_1_1
+
+    *   cecill_2
+
+    *   cecill_2_1
+
+    *   cecill_b
+
+    *   cecill_b_1
+
+        *Since v3.1.95.*
+
+    *   cecill_c
+
+    *   cecill_c_1
+
+        *Since v3.1.95.*
+
+    *   cnri_jython
+
+    *   cnri_python
+
+    *   cnri_python_gpl_compat
+
+    *   condor
+
+        *Since v3.8.0.*
+
+    *   condor_1_1
+
+        *Since v3.8.0.*
+
+    *   cpal
+
+    *   cpal_1
+
+    *   cpl
+
+        *Since v3.1.101.*
+
+    *   cpl_1
+
+        *Since v3.1.101.*
+
+    *   cpol
+
+    *   cpol_1_02
+
+    *   crossword
+
+        *Since v3.8.0.*
+
+    *   cryptix
+
+    *   cua_opl
+
+    *   cua_opl_1
+
+    *   cube
+
+    *   curl
+
+    *   cvw
+
+        *Since v3.5.0.*
+
+    *   d_fsl
+
+        *Since v3.8.0.*
+
+    *   d_fsl_1
+
+        *Since v3.8.0.*
+
+    *   dbad
+
+        *Since v3.8.0.*
+
+    *   dbad_0_2
+
+        *Since v3.8.0.*
+
+    *   dbad_0_3
+
+        *Since v3.8.0.*
+
+    *   dbad_1
+
+        *Since v3.8.0.*
+
+    *   dbad_1_1
+
+        *Since v3.8.0.*
+
+    *   dont_ask
+
+        *Since v3.8.0.*
+
+    *   dsdp
+
+    *   ecl
+
+    *   ecl_1
+
+    *   ecl_2
+
+    *   ecos_1_1
+
+        *Since v3.6.0.*
+
+    *   ecos_2
+
+        *Since v3.6.0.*
+
+    *   efl
+
+        *Since v3.6.0.*
+
+    *   efl_1
+
+        *Since v3.6.0.*
+
+    *   efl_2
+
+        *Since v3.6.0.*
+
+    *   entessa
+
+        *Since v3.6.0.*
+
+    *   epl
+
+    *   epl_1
+
+    *   epl_2
+
+    *   erlpl
+
+        *Since v3.7.0.*
+
+    *   erlpl_1_1
+
+        *Since v3.7.0.*
+
+    *   eudatagrid
+
+        *Since v3.6.0.*
+
+    *   eupl
+
+    *   eupl_1
+
+    *   eupl_1_1
+
+    *   eupl_1_2
+
+    *   eurosym
+
+    *   fair
+
+        *Since v3.6.0.*
+
+    *   fair_source
+
+        *Since v3.8.0.*
+
+    *   fair_source_0_9
+
+        *Since v3.8.0.*
+
+    *   fal
+
+        *Since v3.8.0.*
+
+    *   fal_1_1
+
+        *Since v3.8.0.*
+
+    *   fal_1_2
+
+        *Since v3.8.0.*
+
+    *   fal_1_3
+
+        *Since v3.8.0.*
+
+    *   festival
+
+        *Since v3.8.0.*
+
+    *   frameworx
+
+        *Since v3.6.0.*
+
+    *   frameworx_1
+
+        *Since v3.6.0.*
+
+    *   fsfap
+
+    *   fsful
+
+    *   fsfullr
+
+    *   ftl
+
+    *   gfdl
+
+    *   gfdl_1_1
+
+    *   gfdl_1_1_only
+
+    *   gfdl_1_1_or_later
+
+    *   gfdl_1_2
+
+    *   gfdl_1_2_only
+
+    *   gfdl_1_2_or_later
+
+    *   gfdl_1_3
+
+    *   gfdl_1_3_only
+
+    *   gfdl_1_3_or_later
+
+    *   gfdl_niv
+
+    *   glide
+
+        *Since v3.8.0.*
+
+    *   gpl
+
+    *   gpl_1
+
+        *Since v3.3.0.*
+
+    *   gpl_1_only
+
+    *   gpl_1_or_later
+
+    *   gpl_2
+
+        *Since v3.3.0.*
+
+    *   gpl_2_only
+
+    *   gpl_2_or_later
+
+    *   gpl_3
+
+        *Since v3.3.0.*
+
+    *   gpl_3_only
+
+    *   gpl_3_or_later
+
+    *   gsoap
+
+        *Since v3.7.0.*
+
+    *   gsoap_1.3b
+
+        *Since v3.7.0.*
+
+    *   hpnd
+
+        *Since v3.6.0.*
+
+    *   hpnd_sell
+
+        *Since v3.6.0.*
+
+    *   ibm_pibs
+
+        *Since v3.8.0.*
+
+    *   icu
+
+    *   ijg
+
+        *Since v3.8.0.*
+
+    *   imlib2
+
+        *Since v3.8.0.*
+
+    *   intel
+
+        *Since v3.5.0.*
+
+    *   ipa
+
+        *Since v3.6.0.*
+
+    *   ipl
+
+    *   ipl_1
+
+    *   isc
+
+    *   jabberpl
+
+        *Since v3.5.0.*
+
+    *   json
+
+        *Since v3.1.90.*
+
+    *   jython
+
+        *Since v3.1.90.*
+
+    *   kevlin_henney
+
+        *Since v3.1.90.*
+
+    *   leptonica
+
+        *Since v3.8.0.*
+
+    *   lgpl
+
+    *   lgpl_2
+
+    *   lgpl_2_only
+
+    *   lgpl_2_or_later
+
+    *   lgpl_2_1
+
+    *   lgpl_2_1_only
+
+    *   lgpl_2_1_or_later
+
+    *   lgpl_3
+
+    *   lgpl_3_only
+
+    *   lgpl_3_or_later
+
+    *   lgpl_bdwgc
+
+        *Since v3.1.0.*
+
+    *   libpng
+
+    *   libtiff
+
+        *Since v3.8.0.*
+
+    *   liliq_p
+
+        *Since v3.6.0.*
+
+    *   liliq_p_1_1
+
+        *Since v3.6.0.*
+
+    *   liliq_r
+
+        *Since v3.6.0.*
+
+    *   liliq_r_1_1
+
+        *Since v3.6.0.*
+
+    *   liliq_r_plus
+
+        *Since v3.6.0.*
+
+    *   liliq_r_plus_1_1
+
+        *Since v3.6.0.*
+
+    *   llgpl
+
+    *   lpl
+
+        *Since v3.6.0.*
+
+    *   lpl_1
+
+        *Since v3.6.0.*
+
+    *   lpl_1_02
+
+        *Since v3.6.0.*
+
+    *   lppl
+
+    *   lppl_1
+
+    *   lppl_1_1
+
+    *   lppl_1_2
+
+    *   lppl_1_3a
+
+    *   lppl_1_3c
+
+    *   miros
+
+        *Since v3.6.0.*
+
+    *   mit_0
+
+        *Since v3.6.0.*
+
+    *   mit_advertising
+
+    *   mit_cmu
+
+    *   mit_cmu_warranty
+
+    *   mit_enna
+
+    *   mit_epinions
+
+        *Since v3.7.0.*
+
+    *   mit_feh
+
+    *   mit_new
+
+    *   mit_new_materials
+
+    *   mit_old
+
+    *   mit_oldstyle
+
+    *   mit_oldstyle_disclaimer
+
+    *   mit_oldstyle_permission
+
+    *   mit_open_group
+
+        *Since v3.6.0.*
+
+    *   mit_openvision
+
+        *Since v3.7.0.*
+
+    *   mit_osf
+
+        *Since v3.7.0.*
+
+    *   mit_unixcrypt
+
+        *Since v3.7.0.*
+
+    *   mit_whatever
+
+        *Since v3.7.0.*
+
+    *   mit_widget
+
+        *Since v3.7.0.*
+
+    *   mit_xfig
+
+        *Since v3.7.0.*
+
+    *   motosoto
+
+        *Since v3.5.0.*
+
+    *   mpich2
+
+        *Since v3.8.0.*
+
+    *   mpl
+
+    *   mpl_1
+
+        *Since v3.1.101.*
+
+    *   mpl_1_1
+
+        *Since v3.1.101.*
+
+    *   mpl_2
+
+        *Since v3.1.101.*
+
+    *   mpl_2_no_copyleft_exception
+
+        *Since v3.8.0.*
+
+    *   ms_cl
+
+        *Since v3.8.0.*
+
+    *   ms_pl
+
+    *   ms_rl
+
+    *   mulan
+
+        *Since v3.5.0.*
+
+    *   mulan_1
+
+        *Since v3.5.0.*
+
+    *   mulan_2
+
+        *Since v3.5.0.*
+
+    *   multics
+
+        *Since v3.6.0.*
+
+    *   nasa
+
+        *Since v3.6.0.*
+
+    *   nasa_1_3
+
+        *Since v3.6.0.*
+
+    *   naumen
+
+        *Since v3.6.0.*
+
+    *   nbpl
+
+        *Since v3.8.0.*
+
+    *   nbpl_1
+
+        *Since v3.8.0.*
+
+    *   ncsa
+
+        *Since v3.6.0.*
+
+    *   ngpl
+
+    *   nokia
+
+        *Since v3.6.0.*
+
+    *   nosl
+
+        *Since v3.8.0.*
+
+    *   nosl_1
+
+        *Since v3.8.0.*
+
+    *   npl
+
+    *   npl_1
+
+    *   npl_1_1
+
+    *   nposl
+
+        *Since v3.6.0.*
+
+    *   nposl_3
+
+        *Since v3.6.0.*
+
+    *   ntp
+
+    *   ntp_disclaimer
+
+    *   oclc
+
+    *   oclc_1
+
+    *   oclc_2
+
+    *   odbl
+
+        *Since v3.8.0.*
+
+    *   odbl_1
+
+        *Since v3.8.0.*
+
+    *   odc_by
+
+        *Since v3.8.0.*
+
+    *   odc_by_1
+
+        *Since v3.8.0.*
+
+    *   ofl
+
+    *   ofl_1
+
+        *Since v3.1.101.*
+
+    *   ofl_1_no_rfn
+
+        *Since v3.2.0.*
+
+    *   ofl_1_rfn
+
+        *Since v3.2.0.*
+
+    *   ofl_1_1
+
+        *Since v3.1.101.*
+
+    *   ofl_1_1_no_rfn
+
+        *Since v3.2.0.*
+
+    *   ofl_1_1_rfn
+
+        *Since v3.2.0.*
+
+    *   ogc
+
+        *Since v3.6.0.*
+
+    *   ogc_1
+
+        *Since v3.6.0.*
+
+    *   ogtsl
+
+    *   oldap
+
+        *Since v3.5.0.*
+
+    *   oldap_1_1
+
+        *Since v3.5.0.*
+
+    *   oldap_1_2
+
+        *Since v3.5.0.*
+
+    *   oldap_1_3
+
+        *Since v3.5.0.*
+
+    *   oldap_1_4
+
+        *Since v3.5.0.*
+
+    *   oldap_2
+
+        *Since v3.5.0.*
+
+    *   oldap_2_0_1
+
+        *Since v3.5.0.*
+
+    *   oldap_2_1
+
+        *Since v3.5.0.*
+
+    *   oldap_2_2
+
+        *Since v3.5.0.*
+
+    *   oldap_2_2_1
+
+        *Since v3.5.0.*
+
+    *   oldap_2_2_2
+
+        *Since v3.5.0.*
+
+    *   oldap_2_3
+
+        *Since v3.5.0.*
+
+    *   oldap_2_4
+
+        *Since v3.5.0.*
+
+    *   oldap_2_5
+
+        *Since v3.5.0.*
+
+    *   oldap_2_6
+
+        *Since v3.5.0.*
+
+    *   oldap_2_7
+
+        *Since v3.5.0.*
+
+    *   oldap_2_8
+
+        *Since v3.5.0.*
+
+    *   openssl
+
+    *   opl
+
+        *Since v3.6.0.*
+
+    *   opl_1
+
+        *Since v3.6.0.*
+
+    *   oset_pl
+
+        *Since v3.6.0.*
+
+    *   oset_pl_2_1
+
+        *Since v3.6.0.*
+
+    *   osl
+
+    *   osl_1
+
+    *   osl_1_1
+
+    *   osl_2
+
+    *   osl_2_1
+
+    *   osl_3
+
+    *   pddl
+
+        *Since v3.8.0.*
+
+    *   pddl_1
+
+        *Since v3.8.0.*
+
+    *   peer_production
+
+        *Since v3.8.0.*
+
+    *   php
+
+        *Since v3.6.0.*
+
+    *   php_3
+
+        *Since v3.6.0.*
+
+    *   php_3_01
+
+        *Since v3.6.0.*
+
+    *   postgresql
+
+    *   psf_2
+
+        *Since v3.9.0.*
+
+    *   public_domain
+
+    *   qpl
+
+    *   qpl_1
+
+    *   rpl
+
+    *   rpl_1
+
+    *   rpl_1_1
+
+    *   rpl_1_3
+
+    *   rpl_1_5
+
+    *   rpsl
+
+    *   rpsl_1
+
+        *Since v3.1.95.*
+
+    *   ruby
+
+    *   rscpl
+
+    *   sax_pd
+
+        *Since v3.8.0.*
+
+    *   sds
+
+        *Since v3.8.0.*
+
+    *   sds_1
+
+        *Since v3.8.0.*
+
+    *   sgi_b
+
+    *   sgi_b_1
+
+        *Since v3.1.101.*
+
+    *   sgi_b_1_1
+
+        *Since v3.1.101.*
+
+    *   sgi_b_2
+
+        *Since v3.1.101.*
+
+    *   simpl
+
+        *Since v3.6.0.*
+
+    *   simpl_2
+
+        *Since v3.6.0.*
+
+    *   simple_w3c
+
+        *Since v3.6.0.*
+
+    *   simple_w3c_1_1
+
+        *Since v3.6.0.*
+
+    *   sissl
+
+        *Since v3.5.0.*
+
+    *   sissl_1_1
+
+        *Since v3.5.0.*
+
+    *   sissl_1_2
+
+        *Since v3.5.0.*
+
+    *   sleepycat
+
+        *Since v3.6.0.*
+
+    *   sncl
+
+        *Since v3.8.0.*
+
+    *   sncl_1_10
+
+        *Since v3.8.0.*
+
+    *   sncl_2_0_1
+
+        *Since v3.8.0.*
+
+    *   sncl_2_0_2
+
+        *Since v3.8.0.*
+
+    *   sncl_2_1
+
+        *Since v3.8.0.*
+
+    *   sncl_2_3
+
+        *Since v3.8.0.*
+
+    *   spl
+
+    *   spl_1
+
+    *   ssleay
+
+        *Since v3.2.0.*
+
+    *   stlport
+
+        *Since v3.8.0.*
+
+    *   sugarcrm
+
+    *   sugarcrm_1_1_3
+
+    *   tosl
+
+        *Since v3.6.0.*
+
+    *   truecrypt
+
+        *Since v3.8.0.*
+
+    *   truecrypt_3
+
+        *Since v3.8.0.*
+
+    *   ucl
+
+        *Since v3.6.0.*
+
+    *   ucl_1
+
+        *Since v3.6.0.*
+
+    *   unicode_dfs
+
+        *Since v3.9.0.*
+
+    *   unicode_dfs_2015
+
+        *Since v3.6.0.*
+
+    *   unicode_dfs_2016
+
+        *Since v3.6.0.*
+
+    *   unicode_strict
+
+    *   unicode_tou
+
+    *   unlicense
+
+    *   upl
+
+        *Since v3.6.0.*
+
+    *   upl_1
+
+        *Since v3.6.0.*
+
+    *   vsl
+
+        *Since v3.6.0.*
+
+    *   vsl_1
+
+        *Since v3.6.0.*
+
+    *   vspl
+
+        *Since v3.8.0.*
+
+    *   w3c
+
+        *Since v3.6.0.*
+
+    *   w3c_19980519
+
+        *Since v3.6.0.*
+
+    *   w3c_19980720
+
+        *Since v3.6.0.*
+
+    *   w3c_20021231
+
+        *Since v3.6.0.*
+
+    *   w3c_20150513
+
+        *Since v3.6.0.*
+
+    *   watcom
+
+    *   watcom_1
+
+    *   wordnet
+
+        *Since v3.8.0.*
+
+    *   wtfpl
+
+    *   wtfpl_1
+
+        *Since v3.1.95.*
+
+    *   wtfpl_2
+
+        *Since v3.1.95.*
+
+    *   wtfnmfpl
+
+        *Since v3.1.95.*
+
+    *   wtfnmfpl_1
+
+        *Since v3.1.95.*
+
+    *   x11
+
+        *Since v3.6.0.*
+
+    *   xfree86
+
+        *Since v3.8.0.*
+
+    *   xfree86_1_1
+
+        *Since v3.8.0.*
+
+    *   xnet
+
+        *Since v3.6.0.*
+
+    *   ypl
+
+        *Since v3.8.0.*
+
+    *   ypl_1
+
+        *Since v3.8.0.*
+
+    *   ypl_1_1
+
+        *Since v3.8.0.*
+
+    *   zed
+
+        *Since v3.8.0.*
+
+    *   zend
+
+        *Since v3.8.0.*
+
+    *   zend_2
+
+        *Since v3.8.0.*
+
+    *   zimbra
+
+        *Since v3.8.0.*
+
+    *   zimbra_1_3
+
+        *Since v3.8.0.*
+
+    *   zimbra_1_4
+
+    *   zlib
+
+    *   zlib_acknowledgement
+
+    *   zpl
+
+        *Since v3.1.102.*
+
+    *   zpl_1
+
+        *Since v3.1.102.*
+
+    *   zpl_1_1
+
+        *Since v3.1.102.*
+
+    *   zpl_2
+
+        *Since v3.1.102.*
+
+    *   zpl_2_1
+
+        *Since v3.1.102.*
+
+  License combinations
+    Patterns each covering a combination of multiple licenses.
+
+    Each of these patterns has the tag type:combo .
+
+    *   net_snmp
+
+        *Since v3.6.0.*
+
+    *   perl
+
+    *   python_2
+
+        *Since v3.9.0.*
+
+  License groups
+    Patterns each covering either of multiple licenses.
+
+    Each of these patterns has the tag type:group .
+
+    *   bsd
+
+    *   cc
+
+        *Since v3.6.0.*
+
+    *   gnu
+
+    *   mit
+
+STRUCTURE
+    The regexp patterns follows the DefHash specification, and more
+    specifically the structure of Regexp::Pattern, defining access to one
+    pattern per DefHash object, as `pat`.
+
+    Additionally, (sub)patterns are available in plaintext form, as
+    `pat.alt.*`.
+
+  SUBJECT
+    Each pattern targets one or more subjects, i.e. ways to directly or
+    indirectly represent a license.
+
+    Beware that not all pattern objects fully cover all subjects.
+
+    trait
+        Distinguishing trait or feature expressed in licensing strings, e.g.
+        an advertising clause or granting "...or any later version."
+
+        Coverage for this subject is currently rather weak.
+
+    name
+        Distinguishing name, e.g. usable in license grant.
+
+    grant
+        Text granting the license.
+
+    license
+        Text containing licensing terms.
+
+        Texts containing both license grant and licensing terms (e.g. BSD- and
+        MIT-style licensing) may be classified as either subject grant or
+        subject license. This may change, as needs for distinction is better
+        understood.
+
+  SCOPE
+    Each pattern can process material within some scope, i.e. a certain sample
+    size of the full subject.
+
+    As an example, <https://codesearch.debian.net/> use line-based processing,
+    where patterns spanning multiple lines are not applicable.
+
+    line
+        Pattern typically found within a single line. Typically this means
+        less than 70 characters within scope.
+
+    sentence
+        Pattern matching within a sentence.
+
+        May span multiple lines, but not across multiple sentences. Typically
+        this means no full-stop or colon within scope.
+
+    paragraph
+        Pattern matching distinguishing paragraph.
+
+        May span multiple sentences, but not multiple paragraphs. Typically
+        this means no newline within scope.
+
+    section
+        Pattern matching distinguishing section.
+
+        May span multiple paragraphs, but not multiple sections. Typically
+        this means blank line within scope.
+
+    multisection
+        Pattern may span multiple sections.
+
+  OBSOLETE OBJECTS
+    License objects obsoleted by improved coverage of other objects, and
+    provided only as dummy objects.
+
+    *   python
+
+        *Since v3.9.0.*
+
+        Replaced by "psf_2" and "python_2".
+
+    *   wordnet_3
+
+        *Since v3.9.0.*
+
+        Replaced by "wordnet".
+
+  TAGS
+    Pattern defhashes optionally includes tags, which may help in selecting
+    multiple related patterns.
+
+    Tags are hierarchical, with `:` as separator, and may be extended without
+    notice. Therefore take care to permit sub-parts when tag-matching, e.g.
+    using a regex like ` /\Asome:tag(?:\z|:)/ `.
+
+    *   family:bsd
+
+    *   family:cc
+
+    *   family:gpl
+
+    *   family:mit
+
+    *   family:zlib
+
+        Pattern covers a license part of a family of licenses.
+
+    *   license:contains:grant:*
+
+        License mentions a preferred form for granting the license.
+
+        This implies that license is commonly granted by use of a different
+        (typically far shorter) text.
+
+        Fourth part (optional) is the key to corresponding license pattern,
+        for a grant belonging to a different license (when omitted then a
+        grant for same license is assumed).
+
+    *   license:contains:license:*
+
+        License contains another license.
+
+        Wildcard is the key to corresponding license pattern.
+
+    *   license:contains:name:*
+
+        License mentions name of another license.
+
+    *   license:includes:license:*
+
+        License references coverage of another license.
+
+        Wildcard is the key to corresponding license pattern.
+
+    *   license:is:grant
+
+        License is commonly granted by stating the whole license.
+
+    *   license:published:*
+
+        License grant may include an "as published by..." reference.
+
+        Third part is the key to corresponding trait pattern.
+
+    *   type:trait:publisher:*
+
+        Pattern covers an "as published by ..." license grant phrase.
+
+        Third part (optional) is the key to corresponding license pattern.
+
+    *   type:usage:*:*
+
+        Pattern covers a specific usage of a license.
+
+        Third part is the key of the corresponding non-usage-specific pattern.
+
+        Fourth part is the key of the corresponding usage trait pattern.
+
+    *   type:combo
+
+        Pattern covers a combination of multiple licenses.
+
+    *   type:group
+
+        Pattern covers either of multiple licenses.
+
+    *   type:singleversion:*
+
+        Pattern covers a specific version of a license.
+
+        Third part is the key of the corresponding non-version-specific
+        pattern.
+
+    *   type:trait
+
+        Pattern covers a single trait occuring in licenses.
+
+    *   type:unversioned
+
+        Pattern covers a license without versioning scheme.
+
+    *   type:versioned:decimal
+
+        Pattern covers a license using decimal number versioning scheme.
+
+EXAMPLES
+  Browse patterns
+    The "official" way to browse patterns is using App::RegexpPatternUtils:
+
+        show-regexp-pattern-module --page-result -- License
+
+    Unfortunately, App::RegexpPatternUtils has a deep dependency tree. An
+    alternative is to use Data::Printer and `less`:
+
+        perl -CS -MRegexp::Pattern::License -MDDP -e 'p %Regexp::Pattern::License::RE, fulldump => 1, output => stdout' | less -RS
+
+AUTHOR
+    Jonas Smedegaard `<dr@jones.dk>`
+
+COPYRIGHT AND LICENSE
+      Copyright © 2016-2021 Jonas Smedegaard
+
+      Copyright © 2017-2021 Purism SPC
+
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by the Free
+    Software Foundation; either version 3, or (at your option) any later
+    version.
+
+    This program is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+    or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+    for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program. If not, see <https://www.gnu.org/licenses/>.
+
